@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresno State Bulldogs Volleyball · Alumni Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #CC0033;
+  --red-dark: #8B0020;
+  --red-deep: #3a000e;
+  --gold: #C9A84C;
+  --gold-light: #f0d98a;
+  --cream: #FDF8F3;
+  --ink: #1a0008;
+  --muted: #7a5060;
+  --border: rgba(204,0,51,0.12);
+  --card-bg: rgba(255,255,255,0.75);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(26,0,8,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(204,0,51,0.2);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem; height: 58px;
+}
+.nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-emblem { width: 34px; height: 34px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.nav-text { display: flex; flex-direction: column; }
+.nav-title { font-family: 'Playfair Display', serif; font-size: 14px; color: #fff; font-weight: 700; line-height: 1.1; }
+.nav-sub { font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 1px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 2px; }
+.nav-link { color: rgba(255,255,255,0.65); font-size: 13px; padding: 6px 14px; border-radius: 6px; cursor: pointer; text-decoration: none; transition: color 0.2s, background 0.2s; }
+.nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.nav-cta { background: var(--red); color: #fff; padding: 7px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: var(--red-dark); }
+
+.hero { background: var(--red-deep); padding: 5rem 2.5rem 4rem; position: relative; overflow: hidden; min-height: 520px; display: flex; align-items: center; }
+.hero-bg-lines { position: absolute; inset: 0; background-image: repeating-linear-gradient(-45deg, transparent, transparent 48px, rgba(204,0,51,0.07) 48px, rgba(204,0,51,0.07) 50px); pointer-events: none; }
+.hero-glow { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(204,0,51,0.25) 0%, transparent 70%); top: -200px; right: -100px; pointer-events: none; }
+.hero-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+.hero-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 58px); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; }
+.hero h1 em { font-style: italic; color: var(--gold-light); }
+.hero-desc { font-size: 16px; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.7; margin-bottom: 2rem; max-width: 420px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-red { background: var(--red); color: #fff; border: none; padding: 12px 24px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; transition: background 0.2s; display: inline-block; }
+.btn-red:hover { background: #aa0028; }
+.btn-ghost-light { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.2); padding: 12px 24px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; text-decoration: none; transition: background 0.2s; display: inline-block; }
+.btn-ghost-light:hover { background: rgba(255,255,255,0.14); }
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.hero-stat-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(204,0,51,0.25); border-radius: 14px; padding: 1.25rem 1.5rem; text-align: center; animation: fadeUp 0.7s ease both; }
+.hero-stat-card:nth-child(1){animation-delay:0.1s} .hero-stat-card:nth-child(2){animation-delay:0.2s} .hero-stat-card:nth-child(3){animation-delay:0.3s} .hero-stat-card:nth-child(4){animation-delay:0.4s}
+.hsc-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 4px; }
+.hsc-label { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; }
+
+.section { max-width: 1100px; margin: 0 auto; padding: 4rem 2.5rem; }
+.section-eyebrow { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 6px; }
+.section-heading { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 38px); font-weight: 700; color: var(--ink); line-height: 1.15; margin-bottom: 0.75rem; }
+.section-heading em { font-style: italic; color: var(--red-dark); }
+.section-desc { font-size: 15px; color: var(--muted); font-weight: 300; max-width: 520px; line-height: 1.7; margin-bottom: 2.5rem; }
+.section-hdr-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
+.see-all { font-size: 12px; color: var(--red); text-decoration: none; font-weight: 500; white-space: nowrap; flex-shrink: 0; padding-bottom: 4px; }
+.see-all:hover { text-decoration: underline; }
+.page-divider { height: 1px; background: linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent); max-width: 1100px; margin: 0 auto; }
+
+.seasons-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.season-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; cursor: pointer; transition: border-color 0.2s, transform 0.2s; position: relative; overflow: hidden; text-decoration: none; display: block; }
+.season-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--border); transition: background 0.2s; }
+.season-card:hover { border-color: rgba(204,0,51,0.35); transform: translateY(-2px); }
+.season-card:hover::before { background: var(--red); }
+.sc-year { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.sc-record { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.sc-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+.tag { font-size: 10px; padding: 3px 9px; border-radius: 20px; font-weight: 500; }
+.tag-champ { background: rgba(204,0,51,0.1); color: var(--red-dark); }
+.tag-ncaa { background: rgba(201,168,76,0.15); color: #7a5a10; }
+.tag-conf { background: rgba(26,0,8,0.06); color: var(--muted); }
+
+.photo-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.filter-btn { font-size: 12px; padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+.filter-btn:hover, .filter-btn.active { background: var(--red); color: #fff; border-color: var(--red); }
+.photo-masonry { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.photo-item { border-radius: 10px; overflow: hidden; position: relative; cursor: pointer; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+.photo-item:nth-child(5n+1) { aspect-ratio: 1.4; grid-column: span 2; }
+.photo-item:hover .photo-overlay { opacity: 1; }
+.photo-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+.photo-overlay { position: absolute; inset: 0; background: rgba(26,0,8,0.7); opacity: 0; transition: opacity 0.25s; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 12px; text-align: center; }
+.photo-overlay-year { font-size: 11px; color: var(--gold-light); text-transform: uppercase; letter-spacing: 1px; }
+.photo-overlay-cap { font-size: 12px; color: rgba(255,255,255,0.85); font-weight: 300; }
+.upload-banner { background: var(--red-deep); border-radius: 14px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 1.5rem; border: 1px solid rgba(204,0,51,0.3); flex-wrap: wrap; }
+.ub-text h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; font-weight: 700; margin-bottom: 4px; }
+.ub-text p { font-size: 13px; color: rgba(255,255,255,0.5); font-weight: 300; }
+
+.records-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem; align-items: start; }
+.records-tabs { display: flex; gap: 4px; margin-bottom: 1.25rem; flex-wrap: wrap; }
+.rtab { font-size: 12px; padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.18s; }
+.rtab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.record-list { display: flex; flex-direction: column; }
+.record-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); gap: 12px; }
+.record-row:last-child { border-bottom: none; }
+.rr-left { display: flex; align-items: center; gap: 12px; }
+.rr-rank { font-family: 'Playfair Display', serif; font-size: 11px; color: var(--gold); font-weight: 700; width: 20px; text-align: center; flex-shrink: 0; }
+.rr-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--red-deep); border: 1.5px solid rgba(204,0,51,0.2); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.8); flex-shrink: 0; }
+.rr-name { font-size: 14px; font-weight: 500; color: var(--ink); }
+.rr-detail { font-size: 11px; color: var(--muted); margin-top: 1px; }
+.rr-val { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--red); flex-shrink: 0; }
+
+.milestone-list { display: flex; flex-direction: column; }
+.milestone { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+.milestone:last-child { border-bottom: none; }
+.milestone-year-col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.m-year { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--red); white-space: nowrap; }
+.m-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(204,0,51,0.25); flex-shrink: 0; }
+.m-line { width: 1px; flex: 1; background: var(--border); min-height: 20px; }
+.m-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+.m-detail { font-size: 12px; color: var(--muted); font-weight: 300; line-height: 1.5; }
+
+.alumni-search { display: flex; gap: 10px; margin-bottom: 1.5rem; }
+.alumni-search input { flex: 1; border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); background: rgba(255,255,255,0.8); outline: none; transition: border-color 0.2s; }
+.alumni-search input:focus { border-color: rgba(204,0,51,0.4); }
+.alumni-search input::placeholder { color: #bba0a8; }
+.alumni-search select { border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--muted); background: rgba(255,255,255,0.8); outline: none; cursor: pointer; -webkit-appearance: none; }
+.alumni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.alumni-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; display: flex; align-items: center; gap: 14px; transition: border-color 0.2s, transform 0.2s; cursor: pointer; }
+.alumni-card:hover { border-color: rgba(204,0,51,0.35); transform: translateY(-1px); }
+.ac-avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--red-deep); border: 2px solid rgba(204,0,51,0.2); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); flex-shrink: 0; font-family: 'Playfair Display', serif; }
+.ac-name { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+.ac-pos { font-size: 12px; color: var(--muted); }
+.ac-years { font-size: 11px; color: var(--red); margin-top: 3px; font-weight: 500; }
+
+.connect-section { background: var(--red-deep); padding: 5rem 2.5rem; position: relative; overflow: hidden; }
+.connect-bg { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,255,255,0.02) 80px, rgba(255,255,255,0.02) 81px); pointer-events: none; }
+.connect-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+.connect-left .section-eyebrow { color: var(--gold); }
+.connect-left .section-heading { color: #fff; }
+.connect-left .section-heading em { color: var(--gold-light); }
+.connect-left .section-desc { color: rgba(255,255,255,0.5); }
+.connect-perks { display: flex; flex-direction: column; gap: 12px; margin-top: 1rem; }
+.perk { display: flex; align-items: flex-start; gap: 10px; }
+.perk-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 6px; flex-shrink: 0; }
+.perk-text { font-size: 14px; color: rgba(255,255,255,0.65); font-weight: 300; line-height: 1.5; }
+.connect-form-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(204,0,51,0.25); border-radius: 20px; padding: 2rem; }
+.cf-field { margin-bottom: 1rem; }
+.cf-field:last-of-type { margin-bottom: 1.5rem; }
+.cf-label { display: block; font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.cf-input { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 11px 14px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: #fff; outline: none; transition: border-color 0.2s; }
+.cf-input:focus { border-color: rgba(204,0,51,0.5); }
+.cf-input::placeholder { color: rgba(255,255,255,0.2); }
+.cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cf-submit { width: 100%; background: var(--red); color: #fff; border: none; border-radius: 10px; padding: 13px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: background 0.2s; }
+.cf-submit:hover { background: #aa0028; }
+
+footer { background: #0d0004; padding: 2.5rem; text-align: center; border-top: 1px solid rgba(204,0,51,0.15); }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: rgba(255,255,255,0.7); font-weight: 700; margin-bottom: 6px; }
+.footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 1rem; flex-wrap: wrap; }
+.footer-link { font-size: 12px; color: rgba(255,255,255,0.3); text-decoration: none; }
+.footer-link:hover { color: rgba(255,255,255,0.6); }
+.footer-note { font-size: 11px; color: rgba(255,255,255,0.2); font-weight: 300; }
+
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,0,4,0.85); z-index: 200; align-items: center; justify-content: center; padding: 2rem; }
+.modal-overlay.open { display: flex; }
+.modal-box { background: var(--cream); border-radius: 20px; max-width: 500px; width: 100%; overflow: hidden; animation: fadeUp 0.3s ease both; }
+.modal-header { background: var(--red-deep); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+.modal-title { font-family: 'Playfair Display', serif; font-size: 18px; color: #fff; font-weight: 700; }
+.modal-close { background: rgba(255,255,255,0.1); border: none; color: rgba(255,255,255,0.7); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+.modal-close:hover { background: rgba(255,255,255,0.2); }
+.modal-body { padding: 2rem; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { animation: fadeUp 0.65s ease both; }
+
+@media (max-width: 768px) {
+  nav { padding: 0 1.25rem; }
+  .nav-links { display: none; }
+  .hero { padding: 3.5rem 1.25rem 3rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .section { padding: 3rem 1.25rem; }
+  .records-layout { grid-template-columns: 1fr; }
+  .connect-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .connect-section { padding: 3rem 1.25rem; }
+  .photo-masonry { grid-template-columns: repeat(2, 1fr); }
+  .photo-item:nth-child(5n+1) { grid-column: span 1; aspect-ratio: 1; }
+  .cf-row { grid-template-columns: 1fr; }
+  footer { padding: 2rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-emblem">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <circle cx="9" cy="9" r="5" fill="white" opacity="0.9"/>
+        <circle cx="4" cy="4" r="2" fill="white" opacity="0.6"/>
+        <circle cx="14" cy="4" r="2" fill="white" opacity="0.6"/>
+        <circle cx="4" cy="14" r="1.5" fill="white" opacity="0.4"/>
+        <circle cx="14" cy="14" r="1.5" fill="white" opacity="0.4"/>
+      </svg>
+    </div>
+    <div class="nav-text">
+      <div class="nav-title">Fresno State Volleyball</div>
+      <div class="nav-sub">Alumni Archive</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#seasons" class="nav-link">Seasons</a>
+    <a href="#photos" class="nav-link">Photos</a>
+    <a href="#records" class="nav-link">Records</a>
+    <a href="#alumni" class="nav-link">Alumni</a>
+    <a href="fresno_vb_photo_submission.html" class="nav-cta">Share a photo</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="fade-up">
+      <div class="hero-eyebrow">
+        <span class="hero-dot"></span>
+        Bulldogs Volleyball · First Season 1965
+        <span class="hero-dot"></span>
+      </div>
+      <h1>The <em>legacy</em><br>lives here</h1>
+      <p class="hero-desc">Five NCAA Tournament appearances, a Mountain West Championship, an Olympian, and 60 years of Bulldog volleyball — preserved for every player who ever wore the red and blue.</p>
+      <div class="hero-btns">
+        <a href="#seasons" class="btn-red">Browse seasons</a>
+        <a href="fresno_vb_photo_submission.html" class="btn-ghost-light">Share a photo</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat-card">
+        <div class="hsc-num">773</div>
+        <div class="hsc-label">All-time wins</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hsc-num">5</div>
+        <div class="hsc-label">NCAA Tournament appearances</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hsc-num">74</div>
+        <div class="hsc-label">All-conference selections</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hsc-num">1</div>
+        <div class="hsc-label">Olympic medalist</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEASONS -->
+<section class="section" id="seasons">
+  <div class="section-hdr-row">
+    <div>
+      <div class="section-eyebrow">Season by season</div>
+      <div class="section-heading">Browse <em>every season</em></div>
+      <div class="section-desc">60 years of Bulldog volleyball history. Click any season to see highlights and milestones.</div>
+    </div>
+    <a href="#" class="see-all">All seasons →</a>
+  </div>
+  <div class="seasons-grid">
+    <a class="season-card fade-up" href="#" onclick="openSeasonModal('2023','19-14 (10-8 MW)','Mountain West Tournament Champions. Defeated Utah State in the Semifinals and completed a reverse sweep over Colorado State in the championship game. Earned Fresno State\'s first NCAA Tournament bid since 2002. Lost to No. 2 seed Stanford at Stanford.'); return false;">
+      <div class="sc-year">2023</div>
+      <div class="sc-record">19–14 overall · 10–8 MW</div>
+      <div class="sc-tags"><span class="tag tag-champ">MW Champions</span><span class="tag tag-ncaa">NCAA Tourney</span></div>
+    </a>
+    <a class="season-card fade-up" href="#" onclick="openSeasonModal('2024','16-14 (12-6 MW)','Second consecutive winning season under Coach Leisa Rosen. Finished tied for 2nd in the Mountain West. Led by MW Preseason Player of the Year Addison Haluska (463 kills, 3.76 k/s) and Ella Rud (451 kills, 3.67 k/s). Four players earned All-MW honors.'); return false;">
+      <div class="sc-year">2024</div>
+      <div class="sc-record">16–14 overall · 12–6 MW</div>
+      <div class="sc-tags"><span class="tag tag-conf">Mountain West</span></div>
+    </a>
+    <a class="season-card fade-up" href="#" onclick="openSeasonModal('2018','22-11 (13-5 MW)','Best record under Coach Jonathan Winder. Finished 2nd in the Mountain West. Three All-MW honorees: Madelyn Halteman, Taylor Slover, and Haile Watson. Advanced to NIVC second round.'); return false;">
+      <div class="sc-year">2018</div>
+      <div class="sc-record">22–11 overall · 13–5 MW</div>
+      <div class="sc-tags"><span class="tag tag-conf">MW Runner-Up</span><span class="tag tag-ncaa">NIVC</span></div>
+    </a>
+    <a class="season-card fade-up" href="#" onclick="openSeasonModal('2002','23-7 (10-3 WAC)','Best record in the program\'s modern era. Western Athletic Conference runner-up. NCAA Tournament appearance — the program\'s 4th. Led by All-WAC selections Whitney Arena, Kristen Fenton, Carrie Hartt, and Java Johnson.'); return false;">
+      <div class="sc-year">2002</div>
+      <div class="sc-record">23–7 overall · 10–3 WAC</div>
+      <div class="sc-tags"><span class="tag tag-ncaa">NCAA Tourney</span><span class="tag tag-conf">WAC Runner-Up</span></div>
+    </a>
+    <a class="season-card fade-up" href="#" onclick="openSeasonModal('1997','24-9 (11-3 WAC)','Program\'s best season record at the time. Diana Nalbandian earned All-District VII First Team honors. WAC co-runner-up in the Pacific Division.'); return false;">
+      <div class="sc-year">1997</div>
+      <div class="sc-record">24–9 overall · 11–3 WAC</div>
+      <div class="sc-tags"><span class="tag tag-conf">WAC Pacific Div.</span></div>
+    </a>
+    <a class="season-card fade-up" href="#" onclick="openSeasonModal('1998','18-11 (7-7 WAC)','NCAA Tournament First Round appearance. Shanus Bennett led the team. Program\'s 3rd NCAA Tournament appearance.'); return false;">
+      <div class="sc-year">1998</div>
+      <div class="sc-record">18–11 overall · 7–7 WAC</div>
+      <div class="sc-tags"><span class="tag tag-ncaa">NCAA Tourney</span></div>
+    </a>
+    <a class="season-card fade-up" href="#" onclick="openSeasonModal('1991','21-13 (10-8 Big West)','NCAA Tournament First Round appearance under Coach Lindy Vivas. Freshman Paola Paz-Soldan set the single-season kills record (630) and earned Big West Freshman of the Year. Suzie Regul named All-Big West.'); return false;">
+      <div class="sc-year">1991</div>
+      <div class="sc-record">21–13 overall · 10–8 Big West</div>
+      <div class="sc-tags"><span class="tag tag-ncaa">NCAA Tourney</span><span class="tag tag-champ">Paz-Soldan 630 kills</span></div>
+    </a>
+    <a class="season-card fade-up" href="#" onclick="openSeasonModal('1984','26-13 (11-1 NorPac)','Best season in program history at the time. Fresno State entered the NCAA Top 20 rankings for the first time and tied for 5th at the NCAA Tournament. Ruth Lawanson earned All-America honors — the program\'s first and only volleyball All-American. Lawanson\'s No. 15 was later retired.'); return false;">
+      <div class="sc-year">1984</div>
+      <div class="sc-record">26–13 overall · 11–1 NorPac</div>
+      <div class="sc-tags"><span class="tag tag-champ">Top 20 ranking</span><span class="tag tag-ncaa">NCAA T-5th</span></div>
+    </a>
+    <a class="season-card" href="#" style="background: transparent; border: 1.5px dashed rgba(204,0,51,0.2); display: flex; align-items: center; justify-content: center; min-height: 110px; color: var(--muted); font-size: 13px; text-decoration: none;">
+      + View all 60 seasons
+    </a>
+  </div>
+</section>
+
+<div class="page-divider"></div>
+
+<!-- PHOTOS -->
+<section class="section" id="photos">
+  <div class="section-hdr-row">
+    <div>
+      <div class="section-eyebrow">Photo archive</div>
+      <div class="section-heading">Moments in <em>Bulldog history</em></div>
+      <div class="section-desc">Help us fill the archive — photos from every era of Fresno State volleyball are welcome.</div>
+    </div>
+    <a href="#" class="see-all">Full gallery →</a>
+  </div>
+  <div class="photo-filters">
+    <button class="filter-btn active" onclick="setFilter(this)">All eras</button>
+    <button class="filter-btn" onclick="setFilter(this)">1965–1979</button>
+    <button class="filter-btn" onclick="setFilter(this)">1980s</button>
+    <button class="filter-btn" onclick="setFilter(this)">1990s</button>
+    <button class="filter-btn" onclick="setFilter(this)">2000s</button>
+    <button class="filter-btn" onclick="setFilter(this)">2010s</button>
+    <button class="filter-btn" onclick="setFilter(this)">2020s</button>
+  </div>
+  <div class="photo-masonry">
+    <div class="photo-item" style="background:#2a0a12;">
+      <div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="3" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/></svg><span style="font-size:10px;color:rgba(255,255,255,0.2);font-weight:300;">2023 MW Championship</span></div>
+      <div class="photo-overlay"><div class="photo-overlay-year">2023</div><div class="photo-overlay-cap">Mountain West Championship win over Colorado State</div></div>
+    </div>
+    <div class="photo-item" style="background:#0a1428;">
+      <div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="3" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/></svg><span style="font-size:10px;color:rgba(255,255,255,0.2);font-weight:300;">Ruth Lawanson · 1984</span></div>
+      <div class="photo-overlay"><div class="photo-overlay-year">1984</div><div class="photo-overlay-cap">Ruth Lawanson — program's only All-American, #15 retired</div></div>
+    </div>
+    <div class="photo-item" style="background:#0a2014;">
+      <div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="3" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/></svg><span style="font-size:10px;color:rgba(255,255,255,0.2);font-weight:300;">1992 · Barcelona Olympics</span></div>
+      <div class="photo-overlay"><div class="photo-overlay-year">1992</div><div class="photo-overlay-cap">Ruth Lawanson wins bronze medal at Barcelona Olympics</div></div>
+    </div>
+    <div class="photo-item" style="background:#281800;">
+      <div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="3" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/></svg><span style="font-size:10px;color:rgba(255,255,255,0.2);font-weight:300;">Paola Paz-Soldan · 1991</span></div>
+      <div class="photo-overlay"><div class="photo-overlay-year">1991</div><div class="photo-overlay-cap">Paola Paz-Soldan sets single-season kills record: 630</div></div>
+    </div>
+    <div class="photo-item" style="background:#1a0a28;">
+      <div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="3" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/></svg><span style="font-size:10px;color:rgba(255,255,255,0.2);font-weight:300;">2002 · NCAA Tournament</span></div>
+      <div class="photo-overlay"><div class="photo-overlay-year">2002</div><div class="photo-overlay-cap">Kristen Fenton leads Dogs to NCAA Tournament</div></div>
+    </div>
+    <div class="photo-item" style="background:#200828;">
+      <div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="3" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/></svg><span style="font-size:10px;color:rgba(255,255,255,0.2);font-weight:300;">Save Mart Center · 2018</span></div>
+      <div class="photo-overlay"><div class="photo-overlay-year">2018</div><div class="photo-overlay-cap">22-win season under Coach Winder</div></div>
+    </div>
+    <div class="photo-item" style="background:#181820;">
+      <div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="3" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/></svg><span style="font-size:10px;color:rgba(255,255,255,0.2);font-weight:300;">1972 · NCIAC Champions</span></div>
+      <div class="photo-overlay"><div class="photo-overlay-year">1972</div><div class="photo-overlay-cap">NCIAC regular-season champions, AIAW second round</div></div>
+    </div>
+    <div class="photo-item" style="background:#0e1e0e;">
+      <div class="photo-placeholder"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="3" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/></svg><span style="font-size:10px;color:rgba(255,255,255,0.2);font-weight:300;">Tricia Tuley · 1993–96</span></div>
+      <div class="photo-overlay"><div class="photo-overlay-year">1993–96</div><div class="photo-overlay-cap">Tricia Tuley — career kills leader (1,804), digs leader (1,864)</div></div>
+    </div>
+  </div>
+  <div class="upload-banner">
+    <div class="ub-text">
+      <h3>Have a photo from your era?</h3>
+      <p>We need photos from every decade — especially the 1970s, 80s, and 90s. Every memory matters.</p>
+    </div>
+    <a href="fresno_vb_photo_submission.html" class="btn-red">Submit a photo</a>
+  </div>
+</section>
+
+<div class="page-divider"></div>
+
+<!-- RECORDS -->
+<section class="section" id="records">
+  <div class="section-eyebrow">By the numbers</div>
+  <div class="section-heading">Program <em>records</em></div>
+  <div class="section-desc">The all-time record book from the 2025 Fresno State Volleyball Media Guide.</div>
+  <div class="records-layout">
+    <div>
+      <div class="records-tabs">
+        <button class="rtab active" onclick="switchTab(this,'kills')">Kills</button>
+        <button class="rtab" onclick="switchTab(this,'digs')">Digs</button>
+        <button class="rtab" onclick="switchTab(this,'assists')">Assists</button>
+        <button class="rtab" onclick="switchTab(this,'blocks')">Blocks</button>
+        <button class="rtab" onclick="switchTab(this,'aces')">Aces</button>
+      </div>
+      <div class="record-list" id="recordList"></div>
+    </div>
+    <div>
+      <div style="margin-bottom:1rem;">
+        <div class="section-eyebrow">Timeline</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:0.5rem;">Milestones in <em style="color:var(--red-dark)">Bulldog history</em></div>
+      </div>
+      <div class="milestone-list">
+        <div class="milestone">
+          <div class="milestone-year-col"><div class="m-year">2023</div><div class="m-dot"></div><div class="m-line"></div></div>
+          <div><div class="m-title">Mountain West Tournament Champions</div><div class="m-detail">Fresno State's first MW title and first NCAA Tournament bid since 2002. Dionii Fraga named MW Freshman of the Year.</div></div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-year-col"><div class="m-year">2012</div><div class="m-dot"></div><div class="m-line"></div></div>
+          <div><div class="m-title">Joined the Mountain West Conference</div><div class="m-detail">Fresno State moved from the WAC to the Mountain West Conference.</div></div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-year-col"><div class="m-year">2002</div><div class="m-dot"></div><div class="m-line"></div></div>
+          <div><div class="m-title">23-win season and NCAA Tournament</div><div class="m-detail">Kristen Fenton (568 kills) led the program's best modern-era record. Fenton earned All-West Region First Team honors.</div></div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-year-col"><div class="m-year">1992</div><div class="m-dot"></div><div class="m-line"></div></div>
+          <div><div class="m-title">Ruth Lawanson wins Olympic bronze</div><div class="m-detail">Former Bulldog Ruth Lawanson wins a bronze medal with the US National Team at the XXV Olympiad in Barcelona.</div></div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-year-col"><div class="m-year">1984</div><div class="m-dot"></div><div class="m-line"></div></div>
+          <div><div class="m-title">First All-American — Ruth Lawanson</div><div class="m-detail">Fresno State's first and only volleyball All-American. Program entered the Top 20 rankings. Lawanson's No. 15 was later retired.</div></div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-year-col"><div class="m-year">1965</div><div class="m-dot"></div></div>
+          <div><div class="m-title">Program founded</div><div class="m-detail">Fresno State women's volleyball begins under Coach Gloria Zufall.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-divider"></div>
+
+<!-- COACHES -->
+<section class="section">
+  <div class="section-eyebrow">The bench</div>
+  <div class="section-heading">All-time <em>head coaches</em></div>
+  <div class="section-desc">Eight head coaches across 60 years of Bulldog volleyball.</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
+    <div class="alumni-card"><div class="ac-avatar">LR</div><div><div class="ac-name">Leisa Rosen</div><div class="ac-pos">2023–present · 35–28</div><div class="ac-years">MW Champions 2023</div></div></div>
+    <div class="alumni-card"><div class="ac-avatar">AW</div><div><div class="ac-name">Abbie Wright</div><div class="ac-pos">2022 interim · 7–23</div><div class="ac-years">Mountain West</div></div></div>
+    <div class="alumni-card"><div class="ac-avatar">JW</div><div><div class="ac-name">Jonathan Winder</div><div class="ac-pos">2018–2021 · 56–47</div><div class="ac-years">NIVC 2018</div></div></div>
+    <div class="alumni-card"><div class="ac-avatar">LN</div><div><div class="ac-name">Lauren Netherby-Sewell</div><div class="ac-pos">2008–2017 · 132–165</div><div class="ac-years">Mountain West era</div></div></div>
+    <div class="alumni-card"><div class="ac-avatar">RN</div><div><div class="ac-name">Ruben Nieves</div><div class="ac-pos">2005–2007 · 18–71</div><div class="ac-years">WAC</div></div></div>
+    <div class="alumni-card"><div class="ac-avatar">LV</div><div><div class="ac-name">Lindy Vivas</div><div class="ac-pos">1991–2004 · 263–167</div><div class="ac-years">3 NCAA Tournaments</div></div></div>
+    <div class="alumni-card"><div class="ac-avatar">LO</div><div><div class="ac-name">Leilani Overstreet</div><div class="ac-pos">1971–1990 · 246–272</div><div class="ac-years">NCAA T-5th 1984</div></div></div>
+  </div>
+</section>
+
+<div class="page-divider"></div>
+
+<!-- ALUMNI DIRECTORY -->
+<section class="section" id="alumni">
+  <div class="section-hdr-row">
+    <div>
+      <div class="section-eyebrow">Alumni directory</div>
+      <div class="section-heading">Find your <em>teammates</em></div>
+      <div class="section-desc">Search for fellow Bulldogs from across every era.</div>
+    </div>
+    <a href="#" class="see-all">Full directory →</a>
+  </div>
+  <div class="alumni-search">
+    <input type="text" placeholder="Search by name..." oninput="filterAlumni(this.value)" />
+    <select onchange="filterAlumni('')">
+      <option>All eras</option>
+      <option>1965–1979</option>
+      <option>1980–1989</option>
+      <option>1990–1999</option>
+      <option>2000–2009</option>
+      <option>2010–2019</option>
+      <option>2020–present</option>
+    </select>
+  </div>
+  <div class="alumni-grid" id="alumniGrid"></div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect-section" id="connect">
+  <div class="connect-bg"></div>
+  <div class="connect-inner">
+    <div class="connect-left">
+      <div class="section-eyebrow">Join the network</div>
+      <div class="section-heading">Get <em>connected</em></div>
+      <div class="section-desc">Add yourself to the alumni directory and stay in touch with Bulldogs from every era.</div>
+      <div class="connect-perks">
+        <div class="perk"><div class="perk-dot"></div><div class="perk-text">Appear in the searchable alumni directory</div></div>
+        <div class="perk"><div class="perk-dot"></div><div class="perk-text">Be notified when alumni reunions are planned</div></div>
+        <div class="perk"><div class="perk-dot"></div><div class="perk-text">Get updates when photos from your era are added</div></div>
+        <div class="perk"><div class="perk-dot"></div><div class="perk-text">Reconnect with former teammates across 60 years</div></div>
+      </div>
+    </div>
+    <div class="connect-form-card">
+      <div id="connectFormInner">
+        <div class="cf-row">
+          <div class="cf-field"><label class="cf-label">First name</label><input class="cf-input" type="text" placeholder="e.g. Tricia" /></div>
+          <div class="cf-field"><label class="cf-label">Last name</label><input class="cf-input" type="text" placeholder="e.g. Tuley" /></div>
+        </div>
+        <div class="cf-field"><label class="cf-label">Email address</label><input class="cf-input" type="email" placeholder="you@email.com" /></div>
+        <div class="cf-row">
+          <div class="cf-field"><label class="cf-label">Years played</label><input class="cf-input" type="text" placeholder="e.g. 1993–96" /></div>
+          <div class="cf-field"><label class="cf-label">Position</label><input class="cf-input" type="text" placeholder="e.g. Outside Hitter" /></div>
+        </div>
+        <div class="cf-field"><label class="cf-label">A memory or message</label><textarea class="cf-input" rows="3" placeholder="A favorite memory, a note to fellow alumni, or anything you'd like to share..."></textarea></div>
+        <button class="cf-submit" onclick="submitConnect()">Join the alumni network</button>
+      </div>
+      <div id="connectSuccess" style="display:none;text-align:center;padding:2rem 0;">
+        <div style="width:52px;height:52px;background:rgba(204,0,51,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="#CC0033" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="font-family:'Playfair Display',serif;font-size:22px;color:#fff;font-weight:700;margin-bottom:8px;">Welcome, Bulldog!</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.6;">You're now in the alumni network. Go Dogs!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Fresno State Bulldogs Volleyball</div>
+  <div class="footer-links">
+    <a href="#seasons" class="footer-link">Seasons</a>
+    <a href="#photos" class="footer-link">Photos</a>
+    <a href="#records" class="footer-link">Records</a>
+    <a href="#alumni" class="footer-link">Alumni directory</a>
+    <a href="#connect" class="footer-link">Join the network</a>
+    <a href="fresno_vb_photo_submission.html" class="footer-link">Share a photo</a>
+  </div>
+  <div class="footer-note">A community archive project · Not an official university website · Go Dogs! · Est. 1965</div>
+</footer>
+
+<!-- SEASON MODAL -->
+<div class="modal-overlay" id="seasonModal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">Season details</div>
+      <button class="modal-close" onclick="document.getElementById('seasonModal').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="margin-bottom:1rem;">
+        <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Record</div>
+        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ink);" id="modalRecord"></div>
+      </div>
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Season notes</div>
+        <div style="font-size:14px;color:var(--ink);line-height:1.6;" id="modalNotes"></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="#photos" onclick="document.getElementById('seasonModal').classList.remove('open')" class="btn-red" style="font-size:13px;padding:9px 18px;">View photos from this era</a>
+        <a href="fresno_vb_photo_submission.html" class="btn-ghost-light" style="color:var(--ink);border-color:var(--border);background:var(--cream);font-size:13px;padding:9px 18px;">Share a photo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openSeasonModal(year, record, notes) {
+  document.getElementById('modalTitle').textContent = year + ' Season';
+  document.getElementById('modalRecord').textContent = record;
+  document.getElementById('modalNotes').textContent = notes;
+  document.getElementById('seasonModal').classList.add('open');
+}
+function closeModal(e) {
+  if (e.target === document.getElementById('seasonModal')) document.getElementById('seasonModal').classList.remove('open');
+}
+function setFilter(btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Real career records from the 2025 media guide
+const recordData = {
+  kills: [
+    {i:'TT',n:'Tricia Tuley',d:'Career kills · 1993–96',v:'1,804'},
+    {i:'DN',n:'Diana Nalbandian',d:'Career kills · 1994–97',v:'1,495'},
+    {i:'KF',n:'Kristen Fenton',d:'Career kills · 2001–04',v:'1,353'},
+    {i:'MB',n:'Marissa Brand',d:'Career kills · 2009–11',v:'1,310'},
+    {i:'SR',n:'Suzie Regul',d:'Career kills · 1989–92',v:'1,257'},
+  ],
+  digs: [
+    {i:'TT',n:'Tricia Tuley',d:'Career digs · 1993–96',v:'1,864'},
+    {i:'ME',n:'Maggie Eppright',d:'Career digs · 2013–16',v:'1,788'},
+    {i:'DN',n:'Diana Nalbandian',d:'Career digs · 1994–97',v:'1,470'},
+    {i:'AR',n:'Andrea Radmilovich',d:'Career digs · 1989–92',v:'1,450'},
+    {i:'KM',n:'Kelly Mason',d:'Career digs · 2007–10',v:'1,327'},
+  ],
+  assists: [
+    {i:'BG',n:'Brenda Gregersen',d:'Career assists · 1992–95',v:'5,496'},
+    {i:'DA',n:'Diann Aufdermaur',d:'Career assists · 1996–99',v:'4,345'},
+    {i:'MH',n:'Madelyn Halteman',d:'Career assists · 2016–19',v:'3,851'},
+    {i:'RK',n:'Robyn Keune',d:'Career assists · 2002–05',v:'3,474'},
+    {i:'TS',n:'Traci Sliester',d:'Career assists · 1985–88',v:'3,348'},
+  ],
+  blocks: [
+    {i:'GD',n:'Grace Doyle',d:'Career block assists · 2019–23',v:'408'},
+    {i:'BC',n:'Brianna Clarke',d:'Career block assists · 2008–11',v:'365'},
+    {i:'HW',n:'Haile Watson',d:'Career block assists · 2016–18',v:'334'},
+    {i:'MM',n:'Maci Murdock',d:'Career block assists · 2011–14',v:'326'},
+    {i:'LW',n:'Lynette Wilke',d:'Career block assists · 1985–88',v:'322'},
+  ],
+  aces: [
+    {i:'AR',n:'Andrea Radmilovich',d:'Career aces · 1989–92',v:'209'},
+    {i:'TT',n:'Tricia Tuley',d:'Career aces · 1993–96',v:'159'},
+    {i:'GD',n:'Grace Doyle',d:'Career aces · 2019–23',v:'145'},
+    {i:'KW',n:'Korrin Wild',d:'Career aces · 2010–13',v:'136'},
+    {i:'MH',n:'Madelyn Halteman',d:'Career aces · 2016–19',v:'136'},
+  ]
+};
+const nums = ['I','II','III','IV','V'];
+
+function switchTab(btn, cat) {
+  document.querySelectorAll('.rtab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const list = document.getElementById('recordList');
+  list.innerHTML = recordData[cat].map((r,i) => `
+    <div class="record-row">
+      <div class="rr-left">
+        <div class="rr-rank">${nums[i]}</div>
+        <div class="rr-avatar">${r.i}</div>
+        <div><div class="rr-name">${r.n}</div><div class="rr-detail">${r.d}</div></div>
+      </div>
+      <div class="rr-val">${r.v}</div>
+    </div>`).join('');
+}
+switchTab(document.querySelector('.rtab'), 'kills');
+
+// Real letterwinners and notable alumni from the media guide
+const alumniData = [
+  {i:'AH',n:'Addison Haluska',p:'Opposite · 2025 MW Preseason POY',y:'2022–present'},
+  {i:'ER',n:'Ella Rud',p:'Outside hitter · All-MW 2023 & 2024',y:'2021–2024'},
+  {i:'GD',n:'Grace Doyle',p:'Middle blocker · All-MW 2022',y:'2019–2023'},
+  {i:'RL',n:'Reagan Leonard',p:'Libero · All-MW 2019',y:'2017–2020'},
+  {i:'BC',n:'Brooke Cowie',p:'Setter · All-MW 2024 · MW MVP 2023',y:'2021–2024'},
+  {i:'DF',n:'Dionii Fraga',p:'Libero · MW Freshman of Year 2023',y:'2023–2024'},
+  {i:'HW',n:'Haile Watson',p:'Middle blocker · All-MW 2018',y:'2016–2018'},
+  {i:'TT',n:'Tricia Tuley',p:'Outside hitter · Career kills & digs leader',y:'1993–1996'},
+  {i:'DN',n:'Diana Nalbandian',p:'Outside hitter · All-WAC First Team',y:'1994–1997'},
+  {i:'KF',n:'Kristen Fenton',p:'Outside hitter · All-West Region 2002 & 2003',y:'2001–2004'},
+  {i:'BG',n:'Brenda Gregersen',p:'Setter · WAC Freshman of Year 1992',y:'1992–1995'},
+  {i:'RL2',n:'Ruth Lawanson',p:"OH · Only All-American · No. 15 retired · '92 Olympian",y:'1981–1984'},
+  {i:'PS',n:'Paola Paz-Soldan',p:'Outside hitter · 630 kills in 1991 (season record)',y:'1991–1992'},
+  {i:'SR',n:'Suzie Regul',p:'Middle blocker · All-Big West',y:'1989–1992'},
+  {i:'AR',n:'Andrea Radmilovich',p:'Career aces leader (209)',y:'1989–1992'},
+  {i:'ME',n:'Maggie Eppright',p:'Libero · All-MW 2015',y:'2013–2016'},
+  {i:'KW',n:'Korrin Wild',p:'Outside hitter · All-WAC 2011 & 2013',y:'2010–2013'},
+  {i:'MH',n:'Madelyn Halteman',p:'Setter · All-MW 2018',y:'2016–2019'},
+  {i:'JL',n:'Jenna Legault',p:'Outside hitter · 2024 MW All-Tournament',y:'2023–2024'},
+  {i:'KP',n:'Kasey Purry',p:'Middle blocker · 140 blocks in 2024',y:'2021–2024'},
+];
+
+function filterAlumni(q) {
+  const grid = document.getElementById('alumniGrid');
+  const filtered = alumniData.filter(a => a.n.toLowerCase().includes(q.toLowerCase()));
+  grid.innerHTML = filtered.map(a => `
+    <div class="alumni-card">
+      <div class="ac-avatar">${a.i.substring(0,2)}</div>
+      <div><div class="ac-name">${a.n}</div><div class="ac-pos">${a.p}</div><div class="ac-years">${a.y}</div></div>
+    </div>`).join('');
+}
+filterAlumni('');
+
+function submitConnect() {
+  document.getElementById('connectFormInner').style.display = 'none';
+  document.getElementById('connectSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>
